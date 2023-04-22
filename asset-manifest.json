@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/refinancing-prototype/static/css/main.d6b01d70.css",
+    "main.js": "/refinancing-prototype/static/js/main.968bf128.js",
+    "static/media/loading_3.gif": "/refinancing-prototype/static/media/loading_3.f44d5ea98031923012ae.gif",
+    "static/media/img_certificate.png": "/refinancing-prototype/static/media/img_certificate.f094e99a86a382cd304f.png",
+    "service-worker.js": "/refinancing-prototype/service-worker.js",
+    "static/media/axios.cjs": "/refinancing-prototype/static/media/axios.db8ac43a732de9d34208.cjs",
+    "index.html": "/refinancing-prototype/index.html",
+    "main.d6b01d70.css.map": "/refinancing-prototype/static/css/main.d6b01d70.css.map",
+    "main.968bf128.js.map": "/refinancing-prototype/static/js/main.968bf128.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6b01d70.css",
+    "static/js/main.968bf128.js"
+  ]
+}
