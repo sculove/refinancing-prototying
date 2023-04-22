@@ -1,0 +1,9 @@
+@import '_common_input.scss';
+
+.title {
+    @include commonInputTitleStyle;
+}
+.article {
+    @include commonInputBoxStyle;
+    @include commonInputStyle;
+}

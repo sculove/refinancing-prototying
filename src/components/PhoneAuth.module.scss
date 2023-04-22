@@ -1,0 +1,10 @@
+@import '../scss/utils.scss';
+
+.article {
+    .list {
+        margin-top: 24px;
+        .item + .item {
+            margin-top: 30px;
+        }
+    }
+}

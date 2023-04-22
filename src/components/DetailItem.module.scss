@@ -1,0 +1,52 @@
+@import '../scss/utils.scss';
+
+.article {
+    position: relative;
+    padding-left: 10px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #c4c4c4;
+    }
+    & + .article {
+        margin-top: 6px;
+    }
+    &.type-checked-item {
+        padding-left: 0;
+        &:before {
+            display: none;
+        }
+        label {
+            display: inline;
+            padding: 0 0 0 20px;
+            vertical-align: top;
+            svg {
+                top: 2px;
+                left: 0;
+            }
+        }
+        .link {
+            display: inline-block;
+            padding: 3px 2px;
+            line-height: 1px;
+            vertical-align: top;
+            svg {
+                margin: 0;
+            }
+        }
+    }
+}
+.link {
+    display: inline-block;
+    line-height: 18px;
+    vertical-align: top;
+    color: #767678;
+    svg {
+        margin: 3px 0 0 2px;
+    }
+}

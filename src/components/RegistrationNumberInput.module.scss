@@ -1,0 +1,30 @@
+@import '../scss/utils.scss';
+
+.article {
+    @include commonInputBoxStyle;
+    @include flex-container;
+    @include flex(1);
+    .input {
+        @include commonInputStyle;
+        .type-text {
+            cursor: default;
+        }
+        .input-value::selection {
+            background: rgba(123, 182, 255, 0.5);
+            color: #1e1e23;
+        }
+        &.type-masking .input-value {
+            padding-left: 34px;
+            letter-spacing: 7px;
+            &::selection {
+                color: transparent;
+            }
+        }
+    }
+    .dash {
+        @include commonInputDashStyle;
+    }
+}
+.error-text {
+    @include commonInpuErrorTextStyle;
+}

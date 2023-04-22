@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+//색상표
+$ui-green-color: #09aa5c;
+$point-red-color: #ff5252;
+$sme-mirae-color: #f58220;
+$sme-woori-color: #0067ac;
+$sme-jb-color: #00286c;
+$sme-ibk-color: #004898;
+$cert-naver-color: #657dd1;
+$cert-public-color: #08a19c;
+
+//폰트 굵기
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-ultrabold: 900;
+
+// break-point
+$breakpoint-mobileS: 250px;
+$breakpoint-mobile: 360px;
+$breakpoint-tablet: 600px;
+$breakpoint-desktopS: 1152px;
+$breakpoint-desktopM: 1440px;
+
+$Mobile-font: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+$PC-font: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, '나눔고딕', NanumGothic, sans-serif;
+
+$header-height: 56px;
+$content-max-width: 568px;
+$content-desktopS-max-width: 681px;

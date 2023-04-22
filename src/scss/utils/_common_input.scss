@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+// 공통 Inputs Mixins
+// http://uit.navercorp.com/nPay/develop_team/m.layout/issue/3-inputfocus/scss/common/_mixins.scss
+@mixin Border($width, $style, $color) {
+    border: {
+        width: $width;
+        style: $style;
+        color: $color;
+    }
+}
+@mixin Border-Bottom($width, $style, $color) {
+    border-bottom: {
+        width: $width;
+        style: $style;
+        color: $color;
+    }
+}
+@mixin RadiusTotal($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin Padding($p-top, $p-right, $p-bottom, $p-left) {
+    padding: $p-top $p-right $p-bottom $p-left;
+}
+@mixin InputArae($bg-color) {
+    position: relative;
+    display: block;
+    background-color: $bg-color;
+}
+@mixin ValueStyle($font-color, $font-size, $line-height) {
+    display: block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $font-color;
+}
+@mixin FontStyle($size, $line-height) {
+    font-size: $size;
+    line-height: $line-height;
+}
+@mixin ButtonDelete($right, $top, $p-top, $p-right, $p-bottom, $p-left) {
+    @extend %button_reset;
+
+    position: absolute;
+    top: $top;
+    right: $right;
+    display: none;
+    padding: $p-top $p-right $p-bottom $p-left;
+}
+@mixin commonInputStyle(
+    $padding: 6px 0,
+    $font-size: 18px,
+    $font-weight: $font-weight-medium,
+    $line-height: 25px,
+    $color: #1e1e23,
+    $placeholder-color: #bbbbbd,
+    $masking-letter-spacing: number
+) {
+    @include flex(1);
+    .input-value {
+        @extend %button_reset;
+
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        padding: $padding;
+        box-sizing: border-box;
+        font-size: $font-size;
+        font-weight: $font-weight;
+        line-height: $line-height;
+        text-overflow: ellipsis;
+        color: $color;
+        caret-color: #007cd9;
+        &::placeholder {
+            font-weight: $font-weight-normal;
+            color: $placeholder-color;
+        }
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+        &::-ms-clear {
+            display: none;
+        }
+    }
+    &.type-masking {
+        position: relative;
+        .input-value {
+            letter-spacing: 5px;
+            color: transparent;
+            ::selection {
+                background: transparent;
+                color: transparent;
+            }
+        }
+    }
+}
+@mixin commonInputBoxStyle($flex: false, $border-width: 2px) {
+    @if $flex == true {
+        @include flex(1);
+        @include flex-container;
+    }
+
+    position: relative;
+    &.is-focus {
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 1px;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 $border-width 0 #303038;
+        }
+    }
+    &.is-error {
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 1px;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 $border-width 0 $point-red-color;
+        }
+    }
+}
+@mixin commonInputDashStyle {
+    position: relative;
+    min-width: 9px;
+    line-height: 37px;
+    &:before {
+        @include absoluteV;
+
+        content: '';
+        left: 0;
+        width: 9px;
+        height: 2px;
+        background-color: #929294;
+    }
+}
+@mixin commonInputTitleStyle {
+    display: block;
+    font-size: 15px;
+    font-weight: $font-weight-normal;
+    line-height: 21px;
+    color: #767678;
+}
+@mixin commonInpuErrorTextStyle {
+    margin-top: 11px;
+    font-weight: $font-weight-medium;
+    line-height: 20px;
+    color: $point-red-color;
+}

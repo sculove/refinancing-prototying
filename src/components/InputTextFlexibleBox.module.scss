@@ -1,0 +1,34 @@
+@import '../scss/utils.scss';
+
+.article {
+    @include flex-container;
+
+    border: 1px solid #c8cacc;
+    border-radius: 4px;
+    background-color: #fff;
+    + & {
+        margin-top: 6px;
+    }
+    &.no-border {
+        border: 0 none;
+    }
+    &.type-comparison {
+        border-width: 0 0 2px;
+        border-color: #efeff0;
+        border-radius: 0;
+        .button-delete {
+            padding: 8px 0 8px 16px;
+        }
+    }
+}
+.button-delete {
+    @extend %button_reset;
+
+    position: relative;
+    padding: 14px 16px;
+    visibility: hidden;
+    &.is-actived {
+        transform: translateZ(0); // 버튼 ios 우측 잘림 이슈
+        visibility: visible;
+    }
+}

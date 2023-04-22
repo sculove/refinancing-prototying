@@ -1,0 +1,50 @@
+@import '../scss/utils.scss';
+
+%side-common-style {
+    position: absolute;
+    top: 0;
+    height: $header-height;
+}
+.article {
+    position: relative;
+    text-align: center;
+    .inner {
+        min-height: $header-height;
+        padding: 16px 25% 14px;
+        box-sizing: border-box;
+    }
+    &.is-fixed {
+        height: $header-height;
+        .inner {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 100;
+            background-color: #fff;
+        }
+    }
+    &.is-ellipsis {
+        .inner {
+            padding: 16px 53px 14px;
+        }
+        .title {
+            @include ellipsissingle;
+        }
+    }
+}
+.title {
+    font-size: 18px;
+    line-height: 26px;
+    color: #000;
+}
+.side-right {
+    @extend %side-common-style;
+
+    right: 0;
+}
+.side-left {
+    @extend %side-common-style;
+
+    left: 0;
+}

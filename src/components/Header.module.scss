@@ -1,0 +1,43 @@
+@import '../scss/utils.scss';
+
+%inline-block {
+    display: inline-block;
+    vertical-align: top;
+}
+.article {
+    @include flex-container;
+
+    padding: 17px 20px;
+    background-color: #fff;
+    line-height: 22px;
+}
+.npay {
+    @extend %inline-block;
+    a {
+        display: block;
+    }
+}
+.service {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 8px;
+    &:before {
+        @include absoluteV;
+
+        content: '';
+        left: 0;
+        width: 1px;
+        height: 14px;
+        background-color: #dcdee0;
+    }
+}
+.link {
+    display: block;
+}
+.link-side {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    color: $ui-green-color;
+    cursor: pointer;
+}

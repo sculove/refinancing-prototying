@@ -1,0 +1,14 @@
+@import '../scss/utils.scss';
+
+.article {
+    @include flex-container;
+    @include flex-direction(column);
+
+    min-height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    &:not(:first-child) {
+        margin-top: -56px;
+        padding-top: 56px;
+    }
+}

@@ -1,0 +1,46 @@
+@import '../scss/utils.scss';
+
+.article {
+    position: relative;
+    &.type-emphasis .label {
+        font-size: 17px;
+        font-weight: bold;
+        color: #1e1e23;
+    }
+    &.type-sub .label {
+        padding-left: 26px;
+        font-size: 14px;
+        .icon-check svg {
+            margin: 7px 5px 0;
+        }
+    }
+    &.inline-up {
+        display: inline-block;
+        vertical-align: top;
+        .label {
+            padding-left: 30px;
+            color: #222;
+        }
+    }
+}
+.label {
+    position: relative;
+    display: block;
+    padding: 7px 0 8px 30px;
+    font-weight: $font-weight-medium;
+    line-height: 22px;
+    word-break: keep-all;
+    color: #767678;
+    overflow-wrap: break-word;
+    .optional {
+        margin-left: 4px;
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+        color: #aaaaac;
+    }
+}
+.icon-check {
+    position: absolute;
+    top: 7px;
+    left: 0;
+}

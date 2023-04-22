@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+@use 'sass:math';
+
+@mixin absoluteV {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+@mixin absoluteXV {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+@mixin absoluteX($top: auto) {
+    position: absolute;
+    top: $top;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+@mixin ellipsismulti($line) {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+@mixin ellipsissingle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin squareBracketsRight($width, $height, $b-color, $direction: right) {
+    $angle: -45deg; // 우측방향 (direction == right)
+    @if $direction == 'left' {
+        // 왼쪽 방향 화살표
+        $angle: 135deg;
+    } @else if $direction == 'top' {
+        // 위쪽 방향 화살표
+        $angle: -135deg;
+    } @else if $direction == 'bottom' {
+        $angle: 45deg;
+    }
+
+    display: block;
+    width: $height;
+    height: $width;
+    border: 1px solid $b-color;
+    border-top-width: 0;
+    border-left-width: 0;
+    -webkit-transform: rotate($angle);
+    -moz-transform: rotate($angle);
+    -o-transform: rotate($angle);
+    -ms-transform: rotate($angle);
+    transform: rotate($angle);
+}
+@mixin makeTriangle($position, $width, $height, $b-color) {
+    @if $position == 'top' or $position == 'bottom' {
+        $width: calc($width / 2); /// 소수점일 경우 이슈
+    } @else {
+        $height: calc($height / 2);
+    }
+
+    border: solid transparent;
+    border-width: $height $width;
+    border-#{$position}-color: $b-color;
+}
+@mixin mediaQuery($breakpoint: 'desktopS', $type: 'min') {
+    $mediaList: (
+        'mobileS': (
+            'max': $breakpoint-mobile - 1px,
+            'min': $breakpoint-mobileS,
+        ),
+        'mobile': (
+            'max': $breakpoint-tablet - 1px,
+            'min': $breakpoint-mobile,
+        ),
+        'tablet': (
+            'max': $breakpoint-desktopS - 1px,
+            'min': $breakpoint-tablet,
+        ),
+        'desktopS': (
+            'max': $breakpoint-desktopM - 1px,
+            'min': $breakpoint-desktopS,
+        ),
+        'desktopM': (
+            'min': $breakpoint-desktopM,
+        ),
+    );
+
+    @if $type == 'only' and $breakpoint != 'desktopM' {
+        @media (min-width: map-get($mediaList, $breakpoint, 'min')) and (max-width: map-get($mediaList, $breakpoint, 'max')) {
+            @content;
+        }
+    } @else {
+        @media (#{$type}-width: map-get($mediaList, $breakpoint, $type)) {
+            @content;
+        }
+    }
+}
+@mixin card-round {
+    @include mediaQuery('tablet') {
+        & + & {
+            margin-top: 14px;
+        }
+    }
+
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+/// delay 값을 포함한 keyframes
+/// @param {string} $name
+/// 애니메이션 name - default: ani
+/// @param {number} $duration
+/// 애니메이션 duration 기준 s(초)
+/// @param {number} $delay
+/// 애니메이션 사이 delay 기준 s(초)
+/// @param {map()} $keyframes
+/// 애니메이션 시간대별 스타일
+
+@mixin keyframesWithDelay($name: ani, $duration: null, $delay: 0, $keyframes: ()) {
+    $kfLength: length($keyframes);
+    $count: 1;
+    $all-duration: $duration + $delay;
+    @keyframes #{$name} {
+        @each $aniTime, $property in $keyframes {
+            $frame: math.percentage(math.div($aniTime, $all-duration));
+            @if $count == $kfLength and $delay > 0 {
+                $frame: $frame, 100%;
+            }
+            #{$frame} {
+                @each $key, $value in $property {
+                    #{$key}: #{$value};
+                }
+            }
+            $count: $count + 1; /* stylelint-disable-line */
+        }
+    }
+}

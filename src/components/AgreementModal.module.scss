@@ -1,0 +1,46 @@
+@import '../scss/utils.scss';
+
+.layer {
+    @extend %responsive-inner;
+}
+.article {
+    @include flex-container;
+    @include flex-direction(column);
+
+    height: 100%;
+    padding: 33px 20px 20px;
+    box-sizing: border-box;
+    text-align: left;
+    .check-area {
+        margin-top: 15px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #efeff0;
+    }
+    .list {
+        overflow-y: auto;
+        max-height: 182px;
+        margin: 0 -20px;
+        padding: 15px 20px 20px;
+    }
+    .item {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+.area-button {
+    position: relative;
+    &.scroll {
+        &:before {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            left: -20px;
+            height: 108px;
+            background: linear-gradient(0deg, #fff 19.4%, rgba(#fff, 0.0001) 100%);
+        }
+    }
+    & > button {
+        position: relative;
+    }
+}

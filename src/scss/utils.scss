@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@forward '@defign/ui/dist/scss/design-system' as defign_*;
+
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/flexprefix_mixin';
+@import './utils/placeholders';
+@import './utils/common_input';

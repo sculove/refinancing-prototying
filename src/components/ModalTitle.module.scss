@@ -1,0 +1,25 @@
+@import '../scss/utils.scss';
+
+.article {
+    &.align- {
+        &center {
+            text-align: center;
+        }
+        &left {
+            text-align: left;
+        }
+    }
+    .title {
+        display: block;
+        font-size: 20px;
+        line-height: 26px;
+        color: #222;
+    }
+    .info {
+        margin-top: 6px;
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+        line-height: 21px;
+        color: #767678;
+    }
+}

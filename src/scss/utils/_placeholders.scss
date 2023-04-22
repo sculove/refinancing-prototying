@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/// extend 모음
+%button_reset {
+    border: 0 none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+%box-sizing-border {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+%hidden {
+    overflow: hidden;
+    position: absolute;
+}
+
+%responsive-inner {
+    @include mediaQuery {
+        max-width: $content-desktopS-max-width;
+    }
+
+    width: 100%;
+    max-width: $content-max-width;
+    margin: 0 auto;
+}
+
+%ui-green-color-button {
+    background-color: $ui-green-color;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    &.is-disabled {
+        text-shadow: none;
+    }
+}
+
+%hide-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
