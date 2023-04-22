@@ -1,0 +1,41 @@
+@import '../scss/utils.scss';
+
+.article {
+    scroll-margin-top: 55px;
+    padding: 37px 0 40px;
+    .title {
+        font-size: 19px;
+    }
+}
+.info {
+    margin-top: 9px;
+    padding-top: 21px;
+    border-top: 1px solid #f0f2f4;
+    font-weight: $font-weight-medium;
+    word-break: break-all;
+    strong {
+        display: block;
+        font-size: 15px;
+        font-weight: inherit;
+        line-height: 21px;
+    }
+    ul {
+        margin: 6px 0 16px;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: -0.3px;
+        color: #767678;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    li {
+        &:before {
+            content: '\00B7';
+            margin-right: 4px;
+        }
+        & ~ li {
+            margin-top: 4px;
+        }
+    }
+}

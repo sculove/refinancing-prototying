@@ -1,0 +1,68 @@
+@import '../scss/utils.scss';
+
+.title-area {
+    @include flex-container;
+    @include justify-content(space-between);
+
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f3f5f7;
+    .title {
+        padding: 8px 0;
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .highlight {
+        color: $ui-green-color;
+    }
+}
+.tip-banner {
+    margin: 20px 0 4px;
+    padding: 10px 14px 11px;
+    border-radius: 8px;
+    background-color: #f6f8fa;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    .tip {
+        display: inline-block;
+        padding: 1px 6px;
+        border-radius: 20px;
+        background-color: #0a7df3;
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 17px;
+        vertical-align: top;
+        color: #fff;
+    }
+    .highlight {
+        color: #0a7df3;
+    }
+}
+.text-banner {
+    margin: -8px 0 24px 51px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #f6f8fa;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    color: #1e1e23;
+    .highlight {
+        color: $ui-green-color;
+    }
+}
+.item {
+    & + & {
+        border-top: 1px solid #f3f5f7;
+    }
+}
+.link {
+    position: relative;
+    display: block;
+    padding-right: 16px;
+    & > svg {
+        position: absolute;
+        top: 30px;
+        right: 0;
+    }
+}

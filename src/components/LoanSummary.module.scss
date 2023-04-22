@@ -1,0 +1,22 @@
+@import '../scss/utils.scss';
+
+.article {
+    padding: 22px 0;
+}
+.title {
+    font-size: 22px;
+    line-height: 28px;
+}
+.time {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: $font-weight-medium;
+    line-height: 18px;
+    color: #bbbbbd;
+    &.type-red {
+        color: $point-red-color;
+    }
+    svg {
+        margin: 2px 4px 0 0;
+    }
+}

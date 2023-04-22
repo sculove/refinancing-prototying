@@ -1,0 +1,25 @@
+@import '../scss/utils.scss';
+
+.unit {
+    margin-left: 1px;
+    & + .unit:last-child {
+        margin-left: 0;
+    }
+    &.type-info {
+        font-size: 15px;
+    }
+    &.type-summary {
+        @include mediaQuery('mobileS', 'max') {
+            font-size: 13px;
+        }
+
+        font-size: 14px;
+    }
+    &.type-cancel {
+        margin-left: 0;
+    }
+    &.type-graph {
+        margin-left: 0;
+        font-weight: $font-weight-medium;
+    }
+}

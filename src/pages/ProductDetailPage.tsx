@@ -1,14 +1,12 @@
-import { ButtonBoxMax } from "@defign/ui"
+import Container from "../components/Container"
+import Header from "../components/Header"
+import ProductDetail from "../components/ProductDetail"
 
-export default function ProductDetailPage() {
+export default function ProductPage() {
     return <>
-        <h1>ProductDetailPage</h1>
-        <ButtonBoxMax
-            color="green"
-            text="우리은행은?"
-            onClick={() => {
-                alert("우리은행으로...")
-            }}
-        />
+        <Header title="신용대출비교" main={true}/>
+        <Container>
+            <ProductDetail/>
+        </Container>
     </>
 }

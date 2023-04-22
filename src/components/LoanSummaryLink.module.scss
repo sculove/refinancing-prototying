@@ -1,0 +1,110 @@
+@import '../scss/utils.scss';
+
+.article {
+    @include flex-container;
+
+    margin-top: 18px;
+}
+.link {
+    @include flex(1);
+
+    min-width: 1px;
+    padding: 16px 0 17px 15px;
+    border: 1px solid #f6f8fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    & + & {
+        margin-left: 9px;
+    }
+}
+.result-info {
+    @include flex-container;
+    @include flex-direction(column);
+    @include justify-content(center);
+
+    position: relative;
+    padding-left: 46px;
+    font-size: 15px;
+    line-height: 21px;
+    color: #303038;
+    .bi {
+        @include absoluteV;
+
+        left: 0;
+    }
+    .type-multi & {
+        padding-left: 60px;
+    }
+    .group-result {
+        @include flex-container;
+        .result + .result {
+            position: relative;
+            margin-left: 16px;
+            padding-left: 17px;
+            &:before {
+                @include absoluteV;
+
+                content: '';
+                left: 0;
+                width: 1px;
+                height: 14px;
+                background-color: #efeff0;
+            }
+        }
+    }
+    .result {
+        margin-top: 1px;
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        line-height: 22px;
+        color: $ui-green-color;
+        &.limit {
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 22px;
+                background: linear-gradient(270deg, #fff 0%, #fff 8px, rgba(#fff, 0) 100%);
+            }
+        }
+    }
+    .guide {
+        margin-top: 3px;
+        padding: 0 15px 1px 0;
+        font-weight: $font-weight-medium;
+        line-height: 20px;
+        color: #767678;
+    }
+}
+.switch-info {
+    margin: 11px 15px 0 0;
+    padding-top: 9px;
+    border-top: 1px solid rgba(#d9d9d9, 0.3);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #404048;
+    .highlight {
+        color: $ui-green-color;
+    }
+    .icon {
+        display: inline-block;
+        margin: 4px 0 0 1px;
+        line-height: 1px;
+        vertical-align: top;
+        &.up svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@include mediaQuery('mobileS', 'max') {
+    .type-multi .result-info {
+        padding-left: 51px;
+    }
+}

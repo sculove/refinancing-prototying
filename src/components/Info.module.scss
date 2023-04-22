@@ -1,0 +1,124 @@
+@import '../scss/utils.scss';
+
+.article {
+    position: relative;
+    padding: 24px 0;
+    color: #1e1e23;
+    &:not(.type-five-tab) .label {
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        clip: rect(0 0 0 0);
+    }
+}
+.flexible-box {
+    @include flex-container;
+    &.align-center {
+        @include align-items(center);
+    }
+}
+.bi {
+    padding-right: 10px;
+}
+.area-info {
+    @include flex(1);
+
+    min-width: 0;
+}
+.wrap-name {
+    @include flex-container;
+}
+.name {
+    @include flex(1);
+
+    font-size: 17px;
+    line-height: 23px;
+}
+.text {
+    margin-top: 2px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.badge-area {
+    margin: 4px 0 -4px;
+}
+.description {
+    @include flex-container;
+
+    margin-top: 20px;
+    color: $ui-green-color;
+    .item {
+        @include flex(1);
+
+        margin-top: auto;
+        font-size: 17px;
+        line-height: 23px;
+        & + .item {
+            position: relative;
+            padding-left: 16px;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 4px;
+                left: 0;
+                width: 1px;
+                height: 14px;
+                background-color: #efeff0;
+            }
+        }
+        .limit {
+            white-space: nowrap;
+        }
+    }
+    .type-five-tab & {
+        color: #404048;
+    }
+    &.type-recommend {
+        color: #1e1e23;
+        .item {
+            &:first-child {
+                padding-right: 11px;
+            }
+            &:last-child {
+                min-width: 0;
+                padding-left: 11px;
+            }
+        }
+        .limit {
+            @include ellipsissingle;
+
+            display: block;
+        }
+        .prefix {
+            margin-right: 2px;
+            font-size: 14px;
+            font-weight: $font-weight-normal;
+        }
+    }
+}
+.subtext {
+    margin-top: 2px;
+    padding-left: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #767678;
+    &.type-green {
+        color: $ui-green-color;
+    }
+}
+.label {
+    display: block;
+    font-size: 12px;
+    line-height: 21px;
+    color: #929294;
+}
+.cancel,
+.range {
+    display: block;
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    line-height: 21px;
+    color: #aaaaac;
+}

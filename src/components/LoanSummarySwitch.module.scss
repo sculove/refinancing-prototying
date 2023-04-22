@@ -1,0 +1,19 @@
+@import '../scss/utils.scss';
+
+.article {
+    padding: 22px 0;
+}
+.title {
+    font-size: 22px;
+    line-height: 28px;
+    color: #1e1e28;
+}
+.corp-chip-wrapper {
+    margin-top: 14px;
+    padding-bottom: 19px;
+}
+.link-wrapper {
+    margin: 0 -20px;
+    padding: 6px 20px 0;
+    border-top: 12px solid #f6f8fa;
+}

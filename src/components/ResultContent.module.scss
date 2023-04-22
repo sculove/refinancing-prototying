@@ -1,0 +1,18 @@
+@import '../scss/utils.scss';
+
+.article {
+    padding: 0 20px;
+    color: #1e1e23;
+    & + .article {
+        border-top: 10px solid #f6f8fa;
+    }
+}
+
+@include mediaQuery('tablet') {
+    .article.type-responsive {
+        @include card-round;
+
+        margin-top: 14px !important;
+        border-top: 0 !important;
+    }
+}

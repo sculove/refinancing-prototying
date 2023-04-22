@@ -1,0 +1,35 @@
+@import '../scss/utils';
+
+.article {
+    white-space: nowrap;
+    .item {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        & + .item {
+            margin-left: 7px;
+        }
+    }
+    .order {
+        position: relative;
+        display: block;
+        padding: 10px 0 10px 7px;
+        font-size: 14px;
+        font-weight: $font-weight-medium;
+        color: #aaaaac;
+        cursor: pointer;
+        &.is-checked {
+            color: #1e1e23;
+            &:before {
+                @include absoluteV;
+
+                content: '';
+                left: 0;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: $ui-green-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+@import '../scss/utils.scss';
+
+.article {
+    padding: 20px 0 30px;
+    .point {
+        color: $ui-green-color;
+    }
+    &.type-not-login {
+        padding-bottom: 0;
+    }
+}
+.info {
+    position: relative;
+    min-height: 50px;
+    padding-right: 62px;
+    font-size: 15px;
+    line-height: 21px;
+    .bank-name {
+        @include ellipsissingle;
+
+        display: block;
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .desc {
+        @include ellipsissingle;
+    }
+    .badge {
+        margin: 6px 0 -4px;
+        line-height: 1px;
+    }
+    .bank-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+.description {
+    @include flex-container;
+
+    margin-top: 30px;
+    .item {
+        margin-top: auto;
+        &:not(:last-child) {
+            position: relative;
+            margin-right: 28px;
+            padding-right: 28px;
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 8px;
+                width: 1px;
+                height: 14px;
+                background-color: #dcdee0;
+            }
+        }
+    }
+    .label {
+        font-size: 13px;
+        font-weight: $font-weight-medium;
+        line-height: 20px;
+        color: #767678;
+    }
+    .value {
+        font-size: 24px;
+        font-weight: $font-weight-bold;
+        line-height: 30px;
+        color: $ui-green-color;
+    }
+    .cancel {
+        display: block;
+        margin-top: 2px;
+        font-size: 14px;
+        font-weight: $font-weight-medium;
+        line-height: 17px;
+        color: #aaaaac;
+    }
+    .type-not-login & {
+        display: block;
+        margin-top: 20px;
+        .value {
+            color: #404048;
+        }
+        .item {
+            margin: 0;
+            padding: 1px 0 0;
+            & + .item {
+                margin-top: 16px;
+            }
+        }
+    }
+}
+.text-banner {
+    margin: 18px 0 -10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #f6f8fa;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    color: #1e1e23;
+    .highlight {
+        color: $ui-green-color;
+    }
+}

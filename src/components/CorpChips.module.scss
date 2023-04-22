@@ -1,0 +1,59 @@
+@import '../scss/utils.scss';
+
+.article {
+    overflow-x: auto;
+    margin: 0 -20px;
+    padding: 0 14px 5px;
+    white-space: nowrap;
+}
+.item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    & + & {
+        margin-left: 8px;
+    }
+}
+.chip {
+    display: block;
+    padding: 6px 13px 5px;
+    border: 1px solid #dcdee0;
+    border-radius: 18px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #767678;
+    cursor: pointer;
+    &.is-checked {
+        border-color: #2e343a;
+        background-color: #2e343a;
+        font-weight: bold;
+        color: #fff;
+    }
+}
+.area-bi {
+    display: inline-block;
+    margin: -1px 4px 0 -6px;
+    vertical-align: top;
+    .bi {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                z-index: 4 - $i;
+            }
+        }
+        & + .bi {
+            margin-left: -16px;
+        }
+        &.empty {
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            background-color: #f3f5f7;
+        }
+    }
+}

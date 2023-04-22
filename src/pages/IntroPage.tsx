@@ -6,7 +6,7 @@ import CreditIntro from '../components/CreditIntro';
 export default function Credit() {
     return (
         <>
-            <Header main={true}/>
+            <Header title="대출비교" main={true}/>
             <LoanTypeNavigation />
             <Home><CreditIntro/></Home>
         </>
