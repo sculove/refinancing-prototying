@@ -1,16 +1,15 @@
-import { ButtonBoxMax } from "@defign/ui"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import SwitchLoading from "../components/SwitchLoading"
+import SwitchSelect from "../components/SwitchSelect"
 
+const DURATION = 3000
 export default function List() {
-    const navigate=useNavigate()
-    return <>
-        <h1>대출 리스트...</h1>
-        <ButtonBoxMax
-            color="green"
-            text="전자증명서 약관으로"
-            onClick={() => {
-                navigate("/cert")
-            }}
-        />
-    </>
+    const [isComplete, setIsComplete] = useState<boolean>(false)
+    useEffect(() => {
+        setTimeout(() => {
+            setIsComplete(true)
+        },DURATION)
+    }, [] )
+
+    return ( isComplete ? <SwitchSelect/> : <SwitchLoading/>)
 }

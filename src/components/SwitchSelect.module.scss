@@ -1,0 +1,40 @@
+@import '../scss/utils';
+
+.article {
+    padding-bottom: 140px;
+    box-sizing: border-box;
+}
+.item {
+    position: relative;
+    & + & {
+        margin-top: 10px;
+    }
+}
+.label {
+    position: relative;
+    display: block;
+    padding: 20px 51px 23px 19px;
+    border: 1px solid $defign_gray250;
+    border-radius: 9px;
+    cursor: pointer;
+    &.is-checked {
+        border-color: $defign_green500;
+        .icon-check {
+            border-color: $defign_green500;
+            background-color: $defign_green500;
+        }
+    }
+}
+.icon-check {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid $defign_gray400;
+    border-radius: 50%;
+    box-sizing: border-box;
+    svg {
+        margin: 5px 4px;
+    }
+}

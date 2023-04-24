@@ -1,0 +1,90 @@
+@import '../scss/utils';
+
+.article {
+    @include flex-container;
+    &.disabled {
+        .bi {
+            opacity: 0.4;
+        }
+        .name,
+        .account {
+            color: $defign_gray400;
+        }
+    }
+}
+.bi {
+    padding: 2px 12px 0 0;
+}
+.area-text {
+    @include flex(1);
+
+    min-width: 0;
+}
+.name {
+    @include defign_typography16;
+    @include ellipsissingle;
+
+    display: block;
+    color: $defign_gray900;
+}
+.account {
+    @include defign_typography14;
+    @include ellipsissingle;
+
+    display: block;
+    margin-top: 2px;
+    color: $defign_gray700;
+}
+.info {
+    @include defign_typography15;
+    @include ellipsissingle;
+
+    display: block;
+    margin-top: 5px;
+    font-weight: $defign_weight-medium;
+    color: $defign_gray900;
+    & + & {
+        margin-top: 3px;
+    }
+    .bold {
+        @include defign_typography16;
+        @include ellipsissingle;
+
+        margin-left: 6px;
+        font-weight: $defign_weight-bold;
+    }
+}
+
+$skeleton-duration: 1.2;
+
+@include keyframesWithDelay(
+    $name: ani-skeleton,
+    $duration: $skeleton-duration,
+    $keyframes: (
+        0: (
+            opacity: 1,
+        ),
+        0.6: (
+            opacity: 0.5,
+        ),
+        $skeleton-duration: (
+            opacity: 1,
+        ),
+    )
+);
+
+.area-skeleton {
+    display: block;
+    margin-top: 9px;
+}
+.skeleton {
+    display: block;
+    width: 120px;
+    height: 18px;
+    border-radius: 2px;
+    background-color: $defign_gray100;
+    animation: ani-skeleton #{$skeleton-duration}s linear infinite;
+    & + & {
+        margin-top: 7px;
+    }
+}

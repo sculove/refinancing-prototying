@@ -1,0 +1,10 @@
+@import '../scss/utils';
+
+.item {
+    padding: 20px 19px 23px;
+    border: 1px solid $defign_gray150;
+    border-radius: 9px;
+    & + & {
+        margin-top: 10px;
+    }
+}

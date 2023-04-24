@@ -1,0 +1,9 @@
+@import '../scss/utils';
+
+.article {
+    padding: 8px 20px 22px;
+    &:not(:first-child) {
+        padding-top: 24px;
+        border-top: 9px solid #f0f2f4;
+    }
+}

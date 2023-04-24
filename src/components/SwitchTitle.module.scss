@@ -1,0 +1,17 @@
+@import '../scss/utils';
+
+.article {
+    padding-bottom: 20px;
+}
+.title {
+    @include defign_typography22;
+
+    margin-bottom: 6px;
+    color: $defign_gray900;
+}
+.description {
+    @include defign_typography15;
+
+    margin-top: 8px;
+    color: $defign_gray600;
+}
