@@ -1,11 +1,12 @@
 import classNames from 'classnames/bind';
-import {ContentHeader, LayoutWrapper} from '@financial/common-elements';
 
 import ContentWrapper from './ContentWrapper';
 import ProductInfo from './ProductInfo';
 import SwitchTitle from './SwitchTitle';
 
 import styles from './SwitchLoading.module.scss';
+import CloseHeader from './CloseHeader';
+import Container from './Container';
 
 const cx = classNames.bind(styles);
 
@@ -25,8 +26,8 @@ const DEMO_DATA = [
 function SwitchLoading() {
     return (
         <>
-            <ContentHeader rightButton="close" title="" unFixed={true} />
-            <LayoutWrapper hasHeader={true} isFullHeight={true}>
+            <CloseHeader/>
+            <Container>
                 <ContentWrapper>
                     <h2 className="blind">대출비교</h2>
                     <SwitchTitle
@@ -47,7 +48,7 @@ function SwitchLoading() {
                         ))}
                     </ul>
                 </ContentWrapper>
-            </LayoutWrapper>
+            </Container>
         </>
     );
 }
